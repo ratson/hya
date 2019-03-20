@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="{{ id }}" version="{{ version }}"{{#if versionCode}} android-versionCode="{{ versionCode }}"{{/if}}
+        xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>{{ name }}</name>
+    <description>{{ description }}</description>
+    <author email="{{ author.email }}" href="{{ author.url }}">{{ author.name }}</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+
+{{#each engines}}
+    <engine name="{{ name }}" spec="{{ spec }}" />
+{{/each}}
+
+{{#each preferences}}
+    <preference name="{{ name }}" value="{{ value }}" />
+{{/each}}
+
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+{{#each plugins}}
+{{#if variables}}
+    <plugin name="{{ name }}" spec="{{ spec }}">
+    {{#each variables}}
+        <variable name="{{ name }}" value="{{ value }}" />
+    {{/each}}
+    </plugin>
+{{else}}
+    <plugin name="{{ name }}" spec="{{ spec }}" />
+{{/if}}
+{{/each}}
+</widget>
