@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.3",
+    "cordova-res": "^0.1.0",
     "del": "^4.0.0",
     "esm": "^3.2.18",
     "execa": "^1.0.0",
