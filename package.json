@@ -1,6 +1,6 @@
 {
   "name": "hya",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Build Cordova app effortlessly.",
   "bin": "./cli.js",
   "scripts": {
